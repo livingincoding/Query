@@ -3,34 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>쿼리 값 확인</title>
+    <title></title>
 </head>
 <body>
 
-<h2>쿼리 값에 따른 이미지 표시</h2>
+<h2></h2>
+    <p>sample <a href="https://livingincoding.github.io/Query/?alert=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94&Image=https://via.placeholder.com/150">https://livingincoding.github.io/Query/?alert=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94&Image=https://via.placeholder.com/150</a></p>
 <div id="imageContainer">
-    <!-- 이미지가 있으면 여기에 표시됩니다. -->
+   
 </div>
 
 <script>
-    // URL 쿼리 파라미터를 가져오는 함수
+    
     function getQueryParameter(param) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(param);
     }
 
-    // alert 쿼리의 값 가져와서 alert로 표시
+    
     const alertMessage = getQueryParameter('alert');
     if (alertMessage) {
         alert(alertMessage);
     }
 
-    // Image 쿼리의 값 가져와서 이미지 표시
+    
     const imageUrl = getQueryParameter('Image');
     if (imageUrl) {
         const img = document.createElement('img');
         img.src = imageUrl;
-        img.alt = '쿼리에서 가져온 이미지';
+        img.alt = imageUrl;
         img.style.maxWidth = '100%';
         img.style.height = 'auto';
         document.getElementById('imageContainer').appendChild(img);
