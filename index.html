@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿼리 값 확인</title>
+</head>
+<body>
+
+<h2>쿼리 값에 따른 이미지 표시</h2>
+<div id="imageContainer">
+    <!-- 이미지가 있으면 여기에 표시됩니다. -->
+</div>
+
+<script>
+    // URL 쿼리 파라미터를 가져오는 함수
+    function getQueryParameter(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // alert 쿼리의 값 가져와서 alert로 표시
+    const alertMessage = getQueryParameter('alert');
+    if (alertMessage) {
+        alert(alertMessage);
+    }
+
+    // Image 쿼리의 값 가져와서 이미지 표시
+    const imageUrl = getQueryParameter('Image');
+    if (imageUrl) {
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        img.alt = '쿼리에서 가져온 이미지';
+        img.style.maxWidth = '100%';
+        img.style.height = 'auto';
+        document.getElementById('imageContainer').appendChild(img);
+    }
+</script>
+
+</body>
+</html>
